@@ -1,69 +1,121 @@
-import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Search, FileCheck, Shield } from "lucide-react";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div>
+      <section className="hero-mesh relative overflow-hidden text-white">
+        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-end lg:py-28">
+          <div className="animate-fade-up">
+            <p className="font-display text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+              EthioHire
+            </p>
+            <h1 className="mt-4 max-w-xl text-2xl font-medium leading-snug text-white/95 sm:text-3xl">
+              Find your next role across Ethiopia — from campus to first career.
+            </h1>
+            <p className="mt-4 max-w-lg text-base text-white/75 sm:text-lg">
+              Browse openings, apply in minutes, and keep every application in
+              one place.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                href="/jobs"
+                className="inline-flex items-center gap-2 rounded-md bg-accent px-5 py-3 text-sm font-bold text-primary-dark transition hover:brightness-105"
+              >
+                Browse jobs
+                <ArrowRight size={16} />
+              </Link>
+              <Link
+                href="/sign-up"
+                className="inline-flex items-center gap-2 rounded-md border border-white/30 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
+              >
+                Create account
+              </Link>
+            </div>
+          </div>
+
+          <div className="relative hidden min-h-70 lg:block animate-fade-up stagger-2">
+            <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-white/15 to-white/5 ring-1 ring-white/20" />
+            <div className="absolute inset-6 flex flex-col justify-end gap-3">
+              <div className="rounded-lg bg-white/95 p-4 text-foreground shadow-lg animate-slide-in">
+                <p className="text-xs font-semibold uppercase tracking-wider text-primary">
+                  Featured
+                </p>
+                <p className="mt-1 font-display text-lg font-semibold">
+                  Junior Software Engineer
+                </p>
+                <p className="text-sm text-muted">Addis Ababa · Full-time</p>
+              </div>
+              <div className="rounded-lg bg-white/90 p-4 text-foreground shadow-md animate-slide-in stagger-2">
+                <p className="font-display font-semibold">Marketing Intern</p>
+                <p className="text-sm text-muted">Hybrid · Paid internship</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+        <h2 className="font-display text-2xl font-bold text-foreground sm:text-3xl animate-fade-up">
+          Built for seekers and admins
+        </h2>
+        <p className="mt-2 max-w-2xl text-muted animate-fade-up stagger-1">
+          Whether you are graduating soon or managing listings, EthioHire keeps
+          the path from discovery to application clear.
+        </p>
+
+        <div className="mt-10 grid gap-8 sm:grid-cols-3">
+          {[
+            {
+              icon: Search,
+              title: "Discover roles",
+              body: "Filter by location, type, and category to find openings that match where you are in your career.",
+            },
+            {
+              icon: FileCheck,
+              title: "Apply & track",
+              body: "Submit applications with a cover letter and review status from your personal dashboard.",
+            },
+            {
+              icon: Shield,
+              title: "Admin control",
+              body: "Authorized admins create, update, and remove job listings so seekers always see fresh info.",
+            },
+          ].map((item, i) => (
+            <div
+              key={item.title}
+              className={`animate-fade-up stagger-${i + 1}`}
+            >
+              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <item.icon size={20} />
+              </div>
+              <h3 className="font-display text-lg font-semibold">
+                {item.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                {item.body}
+              </p>
+            </div>
+          ))}
         </div>
-      </main>
+      </section>
+
+      <section className="border-y border-border/70 bg-surface/70">
+        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 py-12 sm:flex-row sm:items-center sm:px-6">
+          <div>
+            <h2 className="font-display text-xl font-bold sm:text-2xl">
+              Ready to explore openings?
+            </h2>
+          </div>
+          <Link
+            href="/jobs"
+            className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-semibold text-white hover:bg-primary-dark"
+          >
+            View all jobs
+            <ArrowRight size={16} />
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }
