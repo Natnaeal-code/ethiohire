@@ -1,5 +1,23 @@
+import type { Application, Job, User } from "@/types";
 
-import type { Job } from "@/types";
+export const DEMO_USERS: User[] = [
+  {
+    id: "user-admin-1",
+    name: "Admin User",
+    email: "admin@ethiohire.com",
+    password: "admin123",
+    role: "admin",
+    createdAt: "2026-01-10T08:00:00.000Z",
+  },
+  {
+    id: "user-seeker-1",
+    name: "Abebe Kebede",
+    email: "seeker@ethiohire.com",
+    password: "seeker123",
+    role: "seeker",
+    createdAt: "2026-02-15T10:30:00.000Z",
+  },
+];
 
 export const DEMO_JOBS: Job[] = [
   {
@@ -157,5 +175,26 @@ export const DEMO_JOBS: Job[] = [
     deadline: "2026-10-28",
     createdAt: "2026-09-20T16:20:00.000Z",
     updatedAt: "2026-09-20T16:20:00.000Z",
+  },
+];
+
+export const DEMO_APPLICATIONS: Application[] = [
+  {
+    id: "app-1",
+    jobId: "job-1",
+    userId: "user-seeker-1",
+    coverLetter:
+      "I recently completed my Computer Science degree and built several React projects during internships. I am excited to grow as a junior engineer at Addis Tech Solutions.",
+    status: "reviewed",
+    appliedAt: "2026-09-22T12:00:00.000Z",
+  },
+  {
+    id: "app-2",
+    jobId: "job-2",
+    userId: "user-seeker-1",
+    coverLetter:
+      "As a communications graduate with campus marketing experience, I would love to contribute to Horn Digital Agency's internship program.",
+    status: "pending",
+    appliedAt: "2026-09-25T09:15:00.000Z",
   },
 ];

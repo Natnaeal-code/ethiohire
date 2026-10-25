@@ -1,3 +1,13 @@
+export type UserRole = "seeker" | "admin";
+
+export interface User {
+  id: string;
+  name: string;
+  email: string;
+  password: string;
+  role: UserRole;
+  createdAt: string;
+}
 
 export interface Job {
   id: string;
@@ -13,4 +23,19 @@ export interface Job {
   deadline: string;
   createdAt: string;
   updatedAt: string;
+}
+
+export type ApplicationStatus =
+  | "pending"
+  | "reviewed"
+  | "accepted"
+  | "rejected";
+
+export interface Application {
+  id: string;
+  jobId: string;
+  userId: string;
+  coverLetter: string;
+  status: ApplicationStatus;
+  appliedAt: string;
 }
